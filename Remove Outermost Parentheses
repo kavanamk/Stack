@@ -1,0 +1,19 @@
+def removeOuterParentheses(s):
+        """
+        :type s: str
+        :rtype: str
+        """
+        stack=[]
+        output=[]
+        primitives=[]
+        
+        for p in s:
+            if p=="(":
+                stack.append(p)
+            if p==")":
+                stack.pop()
+                primitives.append('()'*len(stack))
+        return primitives
+
+s="(())(())"
+print(removeOuterParentheses(s))
